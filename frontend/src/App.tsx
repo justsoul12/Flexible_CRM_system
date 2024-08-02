@@ -7,7 +7,7 @@ export default function App() {
   return (
     <header>
       <SignedOut>
-        <Button className="mx-10">
+        <Button className="mx-10 p-5">
          <SignInButton />
         </Button>
       </SignedOut>
