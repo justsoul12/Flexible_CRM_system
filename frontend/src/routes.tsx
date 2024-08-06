@@ -1,25 +1,23 @@
 
-import { Routes, Route } from 'react-router-dom';
-import AuthLayout from './layout/AuthLayout';
-import SignIn from './auth/sign-in';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
 import Home from './components/Home/Home';
-
-
-
+import Sign_in from './auth/sign-in';
+import Dashboard from './components/Home/Dashboard';
+import { useAuth } from '@clerk/clerk-react';
 
 const AppRoutes = () => {
+  const navigate = useNavigate()
+  const {isSignedIn} = useAuth()
+  if(isSignedIn){
+    navigate('/dashboard')
+  }
   return (
-    <>
-      <Routes >
-        <Route path='/' element={<AuthLayout/>} >
-          <Route path="sign-in" element={<SignIn />} />
-        </Route>
-        <Route path="*" element={<div>404 Not Found</div>} />
-      </Routes>
-      <Routes>
-          <Route path='/' element={<Home/>} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/sign-in' element={<Sign_in/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+    </Routes>
   );
 };
 

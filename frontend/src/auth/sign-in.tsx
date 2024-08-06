@@ -1,9 +1,13 @@
+import { SignIn } from '@clerk/clerk-react';
 
 
-const SignIn = () => {
+const Sign_in = () => {
+
   return (
-    <div>SignIn</div>
-  )
-}
+    <div>
+      <SignIn />
+    </div>
+  );
+};
 
-export default SignIn
+export default Sign_in;
