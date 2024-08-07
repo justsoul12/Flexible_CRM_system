@@ -2,10 +2,14 @@
   "dependencies": {
     "@sentry/node": "^8.21.0",
     "@sentry/profiling-node": "^8.21.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
   },
   "scripts": {
-    "run dev": "nodemon index.js"
+    "start": "nodemon index.js"
   }
 }

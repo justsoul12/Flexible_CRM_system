@@ -6,10 +6,12 @@ require("./instrument.js");
 // Import with `import * as Sentry from "@sentry/node"` if you are using ESM
 const Sentry = require("@sentry/node");
 const express = require("express");
-
 const app = express();
+const mongoose = require('mongoose')
+const ConnectDB = require('./auth/mongoauth.js')
 
 // All your controllers should live here
+
 
 app.get("/", function rootHandler(req, res) {
   res.end("Hello world!");
@@ -26,6 +28,13 @@ app.use(function onError(err, req, res, next) {
   res.end(res.sentry + "\n");
 });
 
+app.use(express.json());
+
+ConnectDB();
 
 
-app.listen(3000);
+mongoose.connection.once('open', () => {
+  app.listen(5000, () => {
+      console.log('server starting at 5000!');
+  });
+});
