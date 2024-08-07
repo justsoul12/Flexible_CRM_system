@@ -1,20 +1,14 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react"
+import HomeNav from "./HomeNav"
 
 
 
 const Home = () => {
   return (
-    <div>
-        <h1>Hi</h1>
-        <header>
-            <SignedOut>
-                <SignInButton />
-            </SignedOut>
-            <SignedIn>
-                <UserButton />
-            </SignedIn>
-        </header>
-    </div>
+    <>
+    <section className=" primary-bg-gradient">
+      <HomeNav/>
+    </section>
+    </>
   )
 }
 

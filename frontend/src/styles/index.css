@@ -109,9 +109,14 @@ body {
   }
 
   .primary-gradient {
-    background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+    background: linear-gradient(129deg, rgb(143, 248, 239) 0%, rgb(0, 176, 255) 100%);
   }
-
+  .primary-bg-gradient {
+    @apply bg-gradient-to-r from-[#021630] to-[#04305a];
+  }
+  .primary-text {
+    @apply text-light-700
+  }
   .dark-gradient {
     background: linear-gradient(
       232deg,
@@ -143,7 +148,7 @@ body {
 }
 
 .primary-text-gradient {
-  background: linear-gradient(129deg, #ff7000 0%, #e2995f 100%);
+  background: linear-gradient(129deg, #021630 0%, #04305a 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

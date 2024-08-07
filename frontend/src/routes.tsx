@@ -12,6 +12,7 @@ const AppRoutes = () => {
   if(isSignedIn){
     navigate('/dashboard')
   }
+  
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
