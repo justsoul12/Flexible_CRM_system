@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Sign_in from './auth/sign-in';
 import Dashboard from './components/Home/Dashboard';
 import { useAuth } from '@clerk/clerk-react';
+import Sign_up from './auth/sign-up';
 
 const AppRoutes = () => {
   const navigate = useNavigate()
@@ -12,11 +13,12 @@ const AppRoutes = () => {
   if(isSignedIn){
     navigate('/dashboard')
   }
-  
+
   return (
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/sign-in' element={<Sign_in/>}/>
+      <Route path='/sign-up' element={<Sign_up/>} />
       <Route path='/dashboard' element={<Dashboard/>}/>
     </Routes>
   );

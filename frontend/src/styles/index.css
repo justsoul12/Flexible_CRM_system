@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 @import url("./theme.css");
+/* index.css or global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-spaceGrotesk: 'Space Grotesk', sans-serif;
+}
+
 
 @layer base {
   :root {
@@ -112,7 +121,7 @@ body {
     background: linear-gradient(129deg, rgb(143, 248, 239) 0%, rgb(0, 176, 255) 100%);
   }
   .primary-bg-gradient {
-    @apply bg-gradient-to-r from-[#021630] to-[#04305a];
+    @apply bg-[#021630] ;
   }
   .primary-text {
     @apply text-light-700

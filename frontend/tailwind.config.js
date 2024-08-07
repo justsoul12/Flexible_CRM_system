@@ -23,6 +23,9 @@ module.exports = {
           500: "#dbdbdb",
           100: "#d1d5db",
         },
+        secondary: {
+          100: '#8ff8ef'
+        },
         dark: {
           100: "#000000",
           200: "#0F1117",

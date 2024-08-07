@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import React from "react"
 import { Link } from "react-router-dom"
 
+
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
@@ -41,7 +42,7 @@ const HomeNav = () => {
             <h4 className=" text-lg font-bold -ml-4 text-primary-500">Prime</h4>
         </div>
         <div className="flex items-center">
-            <div>
+            <div className="max-sm:hidden max-md:hidden">
                 <NavigationMenu>
                     <NavigationMenuList>
                         {SidebarLinks.map((sidebar) => {
@@ -74,10 +75,15 @@ const HomeNav = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>
-            <div>
-                login
+            <div className="flex items-center gap-8 ml-10">
+                <Link to='/sign-in'>
+                    <span className='max-lg:hidden text-secondary-100 font-spaceGrotesk text-base '>Sign In</span>
+                </Link>
+                <Link to='/sign-up'>
+                    <span className='max-lg:hidden font-inter text-primary-500 text-sm border-[1px] border-white px-4 py-1 rounded-sm'>Get Started</span>
+                </Link>
             </div>
-            <div className="hidden max-sm:block">
+            <div className="hidden max-sm:block max-md:block">
                 <MobileNav/>
             </div>
         </div>
