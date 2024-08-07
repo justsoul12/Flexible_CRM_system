@@ -36,5 +36,6 @@ ConnectDB();
 mongoose.connection.once('open', () => {
   app.listen(5000, () => {
       console.log('server starting at 5000!');
+      console.log(process.env)
   });
 });

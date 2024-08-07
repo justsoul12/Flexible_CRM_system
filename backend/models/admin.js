@@ -1,3 +1,4 @@
+const { json } = require('express')
 const mongoose= require('mongoose')
 
 const AdminSchema = new mongoose.Schema({
@@ -7,8 +8,10 @@ const AdminSchema = new mongoose.Schema({
     contact: String,
     photo_id: String,
     meeting_id: String,
+    list_of_ERR: Object,
+    fin_interaction: Object,
 
 })
 
-const CRMadminModel = mongoose.model('users', AdminSchema)
+const CRMadminModel = mongoose.model('Admin', AdminSchema)
 module.exports = CRMadminModel
