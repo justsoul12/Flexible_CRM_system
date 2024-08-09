@@ -52,7 +52,7 @@ module.exports = {
         'border': '#D3D3D3', // Example border color
       },
       backgroundImage: {
-        'purple-gradient': 'linear-gradient(90deg, #6A1B9A 0%, #8E24AA 50%, #D500F9 100%)',
+        'purple-gradient': 'linear-gradient(90deg, rgba(8,0,36,1) 0%, rgba(53,33,208,1) 0%, rgba(78,141,198,1) 0%, rgba(64,44,218,1) 0%, rgba(167,113,221,1) 100%, rgba(53,45,158,1) 100%, rgba(75,35,228,1) 100%)',
       },
       backgroundColor: {
         'background': '#F0F0F0', // Example background color

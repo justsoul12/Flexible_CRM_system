@@ -85,6 +85,11 @@ body {
 }
 
 @layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, rgba(8,0,36,1) 0%, rgba(53,33,208,1) 0%, rgba(78,141,198,1) 0%, rgba(64,44,218,1) 0%, rgba(167,113,221,1) 100%, rgba(53,45,158,1) 100%, rgba(75,35,228,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   .flex-center {
     @apply flex justify-center items-center;
   }

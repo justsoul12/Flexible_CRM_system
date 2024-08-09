@@ -1,5 +1,6 @@
 
 import Demo from "./Demo"
+import Features from "./Features"
 import Hero from "./Hero"
 import HomeNav from "./HomeNav"
 
@@ -12,6 +13,7 @@ const Home = () => {
       <HomeNav/>
       <Hero/>
       <Demo/>
+      <Features/>
     </section>
     </>
   )
