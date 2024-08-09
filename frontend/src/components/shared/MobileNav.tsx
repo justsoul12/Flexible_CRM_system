@@ -48,7 +48,7 @@ const MobileNav = () => {
                             )
                         })}
                     </div>
-                    <div className='pb-6 -mt-[1rem]'>
+                    <div className='pb-6 -mt-[1rem] mb-[2rem]'>
                         <SignedOut>
                         <div className='mt-10 flex flex-col gap-3 mb-6'>
                             <Link to='/sign-in'>

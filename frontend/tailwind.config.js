@@ -24,7 +24,8 @@ module.exports = {
           100: "#d1d5db",
         },
         secondary: {
-          100: '#8ff8ef'
+          100: '#dcdee0',
+          200:'#11d4f2'
         },
         dark: {
           100: "#000000",
@@ -70,6 +71,10 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -88,6 +93,7 @@ module.exports = {
         },
       },
       animation: {
+        floating: 'float 3s ease-in-out infinite',
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: "marquee var(--duration) linear infinite",
