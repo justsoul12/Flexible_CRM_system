@@ -80,7 +80,7 @@ const HomeNav = () => {
                     <span className='max-lg:hidden text-secondary-100 font-spaceGrotesk text-base '>Sign In</span>
                 </Link>
                 <Link to='/sign-up'>
-                    <span className='max-lg:hidden font-inter text-primary-500 text-sm border-[1px] border-white px-4 py-2 rounded-sm '>Get Started</span>
+                    <span className='max-lg:hidden font-inter bg-purple-gradient text-primary-500 text-sm  px-4 py-2 rounded-sm '>Get Started</span>
                 </Link>
             </div>
             <div className="hidden max-sm:block max-md:block">

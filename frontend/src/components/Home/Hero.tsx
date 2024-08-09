@@ -12,7 +12,7 @@ const Hero = () => {
         },
         {
           text: "Connect",
-          className: "text-blue-500 dark:text-blue-500",
+          className: "text-purple-gradient dark:text-purple-gradient",
         },
         {
           text: "with",
@@ -26,7 +26,7 @@ const Hero = () => {
     <>
         <section className=" text-primary-500 relative overflow-hidden h-screen bg-black">
             <div className=" flex flex-col items-center justify-center mt-[5rem] gap-5">
-                <h1 className=" text-5xl font-bold w-[50rem] text-center"> 
+                <h1 className=" text-5xl font-bold w-[50rem] text-center "> 
                     <TypewriterEffectSmooth words={words} className=" text-primary-100" />
                 </h1>
                 <p className=" text-secondary-100 text-center w-[40rem]">Empower your business with our scalable Customer Management System. Streamline communication, build stronger relationships, and drive growth with powerful tools designed for creators and brands.</p>
