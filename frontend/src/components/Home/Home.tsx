@@ -1,3 +1,5 @@
+
+import Demo from "./Demo"
 import Hero from "./Hero"
 import HomeNav from "./HomeNav"
 
@@ -6,9 +8,10 @@ import HomeNav from "./HomeNav"
 const Home = () => {
   return (
     <>
-    <section className=" primary-bg-gradient h-screen">
+    <section className="bg-black h-screen">
       <HomeNav/>
       <Hero/>
+      <Demo/>
     </section>
     </>
   )

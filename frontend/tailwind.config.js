@@ -19,6 +19,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        'purple-1': '#6A1B9A',
+        'purple-2': '#8E24AA',
+        'purple-3': '#AB47BC',
+        'purple-4': '#D500F9',
         primary: {
           500: "#dbdbdb",
           100: "#d1d5db",
@@ -47,6 +51,9 @@ module.exports = {
       borderColor: {
         'border': '#D3D3D3', // Example border color
       },
+      backgroundImage: {
+        'purple-gradient': 'linear-gradient(90deg, #6A1B9A 0%, #8E24AA 50%, #D500F9 100%)',
+      },
       backgroundColor: {
         'background': '#F0F0F0', // Example background color
       },
@@ -71,6 +78,25 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "spin-around": {
+          "0%": {
+            transform: "translateZ(0) rotate(0)",
+          },
+          "15%, 35%": {
+            transform: "translateZ(0) rotate(90deg)",
+          },
+          "65%, 85%": {
+            transform: "translateZ(0) rotate(270deg)",
+          },
+          "100%": {
+            transform: "translateZ(0) rotate(360deg)",
+          },
+        },
+        slide: {
+          to: {
+            transform: "translate(calc(100cqw - 100%), 0)",
+          },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
@@ -94,6 +120,8 @@ module.exports = {
       },
       animation: {
         floating: 'float 3s ease-in-out infinite',
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        slide: "slide var(--speed) ease-in-out infinite alternate",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: "marquee var(--duration) linear infinite",
