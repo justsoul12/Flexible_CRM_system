@@ -5,7 +5,7 @@ const ClientSchema = new mongoose.schema({
     email: String,
     pwd: String,
     contact: String,
-    photo_id: binData,
+    photo_id: binNum,
     news_subs_status: String,
     subscribtions:Object,
     counselors: {
