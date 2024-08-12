@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {
@@ -11,11 +12,12 @@ import {
 } from "@tabler/icons-react";
 import { AnimatedBeamMultipleOutputDemo } from "./Social";
 import { AnimatedListDemo } from "./AnimatedList";
+import { CMS, CustomSupport, DashFeature, EmailMarket, TeamPreview } from "./Team";
 
 
 export function BentoGridDemo() {
   return (
-    <BentoGrid className="max-w-4xl mx-auto">
+    <BentoGrid className="max-w-4xl mx-auto bg-black h-fit">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -34,21 +36,21 @@ const Skeleton = () => (
 );
 const items = [
   {
-    title: "The Dawn of Innovation",
+    title: "Email Automation",
     description: "Explore the birth of groundbreaking ideas and inventions.",
-    header: <skeleton/>,
+    header: <EmailMarket/>,
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Digital Revolution",
-    description: "Dive into the transformative power of technology.",
-    header: <Skeleton />,
+    title: "Manage teams",
+    description: "Track team performance with our team management feature.",
+    header: <TeamPreview />,
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Post to multiple platforms at once",
-    description: "With our AI-powered platform, you can post to multiple platforms at once, saving you time and effort.",
-    header: <Skeleton />,
+    title: "Customizable Dashboard",
+    description: "Monitor your business activities, track key metrics, and gain real-time insights.",
+    header: <DashFeature />,
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
@@ -59,15 +61,15 @@ const items = [
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Pursuit of Knowledge",
-    description: "Join the quest for understanding and enlightenment.",
-    header: <Skeleton />,
+    title: "AI-Powered Customer Support",
+    description: "Experience seamless customer service AI assistance.",
+    header: <CustomSupport />,
     icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "The Joy of Creation",
-    description: "Experience the thrill of bringing ideas to life.",
-    header: <Skeleton />,
+    title: "Content Management",
+    description: "Streamline your content creation and organization with an intuitive CMS.",
+    header: <CMS />,
     icon: <IconBoxAlignTopLeft className="h-4 w-4 text-neutral-500" />,
   },
   {
