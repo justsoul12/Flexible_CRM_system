@@ -31,7 +31,7 @@ export function BentoGridDemo() {
     </BentoGrid>
   );
 }
-const Skeleton = () => (
+const _Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br  from-neutral-900 to-neutral-800 "></div>
 );
 const items = [
