@@ -5,7 +5,7 @@ const profileSchema = new mongoose.schema({
     email: String,
     contact: String,
     pwd: String,
-    photo_id: binData,
+    photo_id: String,
     meeting_id: String,
     role : {
         '$ref': 'roles',
