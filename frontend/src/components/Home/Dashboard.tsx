@@ -1,14 +1,16 @@
 
-import { SignedIn, SignOutButton, useAuth, UserButton } from "@clerk/clerk-react"
+import { SignedIn, SignOutButton, UserButton } from "@clerk/clerk-react"
 
+interface Props {
+  user:string
+}
 
-const Dashboard = () => {
-    const {userId:clerkId} = useAuth()
+const Dashboard = ({user}:Props) => {
   return (
     <>
     <SignedIn>
       <div>
-        clerkId: <p className=" font-bold">{clerkId}</p>
+        clerkId: <p className=" font-bold">{JSON.parse(user)}</p>
         <SignedIn>
             <UserButton/>
           </SignedIn> 
