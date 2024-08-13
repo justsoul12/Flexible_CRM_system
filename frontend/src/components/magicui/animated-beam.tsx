@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+/*eslint-disable @typescript-eslint/no-unused-vars */
 
 import { RefObject, useEffect, useId, useState } from "react";
 import { motion } from "framer-motion";
@@ -95,7 +96,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
     // Initialize ResizeObserver
     const resizeObserver = new ResizeObserver((entries) => {
       // For all entries, recalculate the path
-      for (let entry of entries) {
+      for (let _entry of entries) {
         updatePath();
       }
     });
