@@ -12,9 +12,11 @@ const AppRoutes = () => {
   const {userId:clerkId} = useAuth()
   const navigate = useNavigate()
   const {isSignedIn} = useAuth()
+  
   if(isSignedIn){
-    navigate(`/dashboard/${JSON.parse(JSON.stringify(clerkId))}`)
+    navigate(`/dashboard/${JSON.stringify(clerkId)}`)
   }
+ 
   
   return (
     <Routes>

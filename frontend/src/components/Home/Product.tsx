@@ -41,6 +41,22 @@ const Product = () => {
               </button>
             </div>
           </div>
+          <div className="flex  justify-between mt-[15rem]">
+            <div className="flex flex-col gap-3 justify-center  px-4 w-1/2">
+              <img src="./assets/icons/teamcon.png" alt="dashboard" className="w-[8rem] h-auto rounded-md mx-auto my-5 " />
+              <h1 className=" text-3xl font-bold text-primary-500 ">Smart Support Hub</h1>
+              <p className="font-sans font-normal text-pretty text-neutral-400 text-lg">
+                Harness the power of AI to deliver exceptional customer support. Our intelligent system learns from every interaction, 
+                ensuring your customers receive fast, accurate, and personalized assistance every time.
+              </p>
+              <button className="px-8 py-2 rounded-full w-[10rem] bg-purple-gradient  text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
+                Read More
+              </button>
+            </div>
+            <div className="w-1/2 px-5">
+              <img src="./assets/images/member.png" className=" rounded-md bg-purple-gradient " />
+            </div>
+          </div>
         </div>
       </section>
     </>

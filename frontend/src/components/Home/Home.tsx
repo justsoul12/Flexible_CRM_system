@@ -3,6 +3,7 @@ import Demo from "./Demo"
 import Features from "./Features"
 import Hero from "./Hero"
 import HomeNav from "./HomeNav"
+import Pricing from "./Pricing"
 import Product from "./Product"
 
 
@@ -16,6 +17,7 @@ const Home = () => {
       <Demo/>
       <Features/>
       <Product/>
+      <Pricing/>
     </section>
     </>
   )
