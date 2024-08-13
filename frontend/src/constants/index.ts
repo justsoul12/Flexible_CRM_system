@@ -1,4 +1,4 @@
-import { SidebarLink } from "@/types";
+import { Pricing, SidebarLink } from "@/types";
 
 
 export const SidebarLinks: SidebarLink[] = [
@@ -60,3 +60,50 @@ export const components: { title: string; href: string; description: string }[] 
         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
     },
   ]
+
+export const pricing:Pricing[] = [
+  {
+    id:1,
+    title: 'Hobby',
+    amountInMonth: '$0 / Month',
+    amountInYear: '$0 / Year',
+    description: 'For individuals trying out the product',
+    features: [
+      'Access to all tools for 14 days',
+      'No credit card required',
+      'Community Support'
+    ]
+  },
+  {
+    id:2,
+    title: 'Pro',
+    amountInMonth: '$50 / Month',
+    amountInYear: '$250 / Year',
+    description: 'For small to large businesses',
+    features: [
+      'Everything in Hobby +',
+      'Access to our dev team',
+      'Coffee with the CEO',
+      'Request tools',
+      'Advanced analytics',
+      'Customizable dashboards',
+      '24/7 customer support',
+      'Unlimited data storage',
+      'Enhanced security features',
+    ]
+  },
+  {
+    id:3,
+    title: 'Enterprise',
+    amountInMonth: 'Custom',
+    amountInYear: 'Custom',
+    description: 'For large scale businesses +',
+    features: [
+      'Everything in Pro +',
+      'HIPAA and SOC2 compliance',
+      'Bulk email support',
+      'Customizable dashboards',
+      '24/7 customer support',
+    ]
+  },
+]
