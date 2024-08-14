@@ -1,4 +1,6 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+"use client";
+import  { useState } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "../components/ui/sidebar";
 import {
   IconArrowLeft,
@@ -6,22 +8,22 @@ import {
   IconSettings,
   IconUserBolt,
 } from "@tabler/icons-react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-
+import { Link, Outlet } from "react-router-dom";
 import { SignedIn, UserButton } from "@clerk/clerk-react";
 
 interface Props {
-  clerkId: string;
+  clerkId?:string
 }
 
-export function Admin({ clerkId }: Props) {
-  const navigate = useNavigate();
+
+export function Admin({clerkId}:Props) {
   const links = [
     {
       label: "Dashboard",
-      href: "dashboard",
+      href: "#",
       icon: (
         <IconBrandTabler className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -35,7 +37,7 @@ export function Admin({ clerkId }: Props) {
     },
     {
       label: "Settings",
-      href: "settings",
+      href: "#",
       icon: (
         <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -53,21 +55,24 @@ export function Admin({ clerkId }: Props) {
     <div
       className={cn(
         "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-        "h-screen"
+        "h-screen" // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
-        <SidebarBody className="justify-between gap-10">
+        <SidebarBody className="justify-between gap-10 border-r-[1px] border-black ">
           <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             <>
               <Logo />
             </>
             <div className="mt-8 flex flex-col gap-2">
-              {links.map((link, idx) => (
-                <SidebarLink
-                  key={idx}
-                  link={link}
-                  onClick={() => navigate(`/admin/${clerkId}/${link.href}`)}
+              {links.map((link) => (
+                <SidebarLink 
+                  key={link.label}
+                  link={{
+                    label: link.label,
+                    href: `/admin/dashboard/${clerkId}/${link.href}`,
+                    icon: link.icon,
+                  }}
                 />
               ))}
             </div>
@@ -89,23 +94,15 @@ export function Admin({ clerkId }: Props) {
               }}
             />
             <SignedIn>
-              <UserButton />
+              <UserButton/>
             </SignedIn>
           </div>
         </SidebarBody>
       </Sidebar>
-      <div className="flex flex-1">
-        <Routes>
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="settings" element={<Settings />} />
-          {/* Add other routes here */}
-        </Routes>
-      </div>
+      <Outlet/>
     </div>
   );
 }
-
 export const Logo = () => {
   return (
     <Link
@@ -123,15 +120,34 @@ export const Logo = () => {
     </Link>
   );
 };
-
-const Dashboard = () => {
-  return <div>Dashboard Content</div>;
+export const LogoIcon = () => {
+  return (
+    <Link
+      to="#"
+      className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
+    >
+      <div className="h-5 w-6 bg-black dark:bg-white rounded-br-lg rounded-tr-sm rounded-tl-lg rounded-bl-sm flex-shrink-0" />
+    </Link>
+  );
 };
 
-const Profile = () => {
-  return <div>Profile Content</div>;
+interface dashProps {
+  clerkId: string
+}
+
+// Dummy dashboard component with content
+export const Dashboard = ({ clerkId }: dashProps) => {
+  return (
+    <div className="flex flex-1">
+      {clerkId}
+    </div>
+  );
 };
 
-const Settings = () => {
-  return <div>Settings Content</div>;
-};
+export function Profile() {
+  return <div>Profile Page</div>;
+}
+
+export function Settings() {
+  return <div>Settings Page</div>;
+}
