@@ -7,11 +7,18 @@ import {
   IconSettings,
   IconUserBolt,
 } from "@tabler/icons-react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Settings from "./Settings";
+import { SignedIn, UserButton } from "@clerk/clerk-react";
 
-export function SidebarDemo() {
+interface Props {
+    clerkId:string;
+}
+
+export function Admin({clerkId}:Props) {
+    const navigate = useNavigate();
   const links = [
     {
       label: "Dashboard",
@@ -22,7 +29,7 @@ export function SidebarDemo() {
     },
     {
       label: "Profile",
-      href: "#",
+      href: "profile",
       icon: (
         <IconUserBolt className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
@@ -47,7 +54,7 @@ export function SidebarDemo() {
     <div
       className={cn(
         "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-        "h-[60vh]" // for your use case, use `h-screen` instead of `h-[60vh]`
+        "h-screen" // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={false}>
@@ -58,7 +65,7 @@ export function SidebarDemo() {
             </>
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
-                <SidebarLink key={idx} link={link} />
+                <SidebarLink key={idx} link={link} onClick={() => navigate(`/admin/dashboard/${clerkId}/${link.href}`)} />
               ))}
             </div>
           </div>
@@ -78,10 +85,20 @@ export function SidebarDemo() {
                 ),
               }}
             />
+             <SignedIn>
+                <UserButton/>
+            </SignedIn>
           </div>
         </SidebarBody>
       </Sidebar>
-      <Dashboard />
+      <div className="flex flex-1">
+        <Routes>
+          <Route path={`dashboard`} element={<Dashboard />} />
+          <Route path={`profile`} element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+          {/* Add other routes here */}
+        </Routes>
+      </div>
     </div>
   );
 }
@@ -138,3 +155,9 @@ const Dashboard = () => {
     </div>
   );
 };
+
+const Profile = ()=>{
+    return(
+        <div>Profile</div>
+    )
+}

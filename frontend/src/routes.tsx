@@ -6,7 +6,7 @@ import Sign_in from './auth/sign-in';
 import { useAuth } from '@clerk/clerk-react';
 import Sign_up from './auth/sign-up';
 import PageNotFound from './components/shared/PageNotFound';
-import { SidebarDemo } from './admin/page';
+import { Admin } from './admin/page';
 
 const AppRoutes = () => {
   const {userId:clerkId} = useAuth()
@@ -14,7 +14,7 @@ const AppRoutes = () => {
   const {isSignedIn} = useAuth()
   
   if(isSignedIn){
-    navigate(`/admin/dashboard/${JSON.stringify(clerkId)}`)
+    navigate(`/admin/dashboard/${JSON.stringify(clerkId)}/*`, {replace:true})
   }
  
   
@@ -23,7 +23,7 @@ const AppRoutes = () => {
       <Route path='/' element={<Home/>}/>
       <Route path='/sign-in' element={<Sign_in/>}/>
       <Route path='/sign-up' element={<Sign_up/>} />
-      <Route path={`/admin/dashboard/${JSON.stringify(clerkId)}`} element={<SidebarDemo/>}/>
+      <Route path={`/admin/dashboard/${JSON.stringify(clerkId)}/*`} element={<Admin clerkId={JSON.stringify(clerkId)}/>}/>
       <Route path='*' element={<PageNotFound/>} />
     </Routes>
   );
