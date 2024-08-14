@@ -1,39 +1,78 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { pricing } from "@/constants";
+import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import { useState } from "react";
 
 const Pricing = () => {
+
+    const [isOn, setIsOn] = useState(false);
+  
+    const handleToggle = () => {
+      setIsOn(!isOn);
+    };
+
+
   return (
    <>
-    <section className="bg-black pt-[5rem]">
+    <section className="bg-black pt-[5rem] h-screen">
         <div className=" flex flex-col items-center justify-center gap-3 text-center my-[2rem]  ">
-            <h1 className=" text-5xl font-bold text-primary-500">Simple <span className=" text-gradient">pricing</span></h1>
-            <p className="font-sans font-normal text-neutral-600 text-lg"> Simple pricing for startups, small businesses, medium scale businesses and enterprises.</p>
+            <h1 className=" text-5xl font-bold text-primary-500">Simple <span className=" text-gradient">Pricing</span></h1>
+            <p className="font-sans font-normal text-neutral-400 text-lg"> Simple pricing for startups, small businesses, medium scale businesses and enterprises.</p>
+            <div className="flex items-center">
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={isOn}
+                  onChange={handleToggle}
+                />
+                <div
+                  className={`w-11 h-6 rounded-full ${
+                    isOn ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
+                ></div>
+                <div
+                  className={`w-4 h-4 bg-white rounded-full shadow-md transform ${
+                    isOn ? 'translate-x-6' : 'translate-x-1'
+                  }`}
+                ></div>
+              </label>
+            <span className="ml-3 text-gray-700">{isOn ? 'On' : 'Off'}</span>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-5">
+        <div className="flex  flex-wrap gap-5 bg-black">
             {pricing.map((item)=>(
-                <CardSpotlight key={item.id} className="h-96 w-96 ">
-                <p className="text-xl font-bold relative z-20 mt-2 text-white">
-                    {item.title}
-                </p>
-                <div className="text-neutral-200 mt-4 relative z-20">
-                    {item.description}
-                    <ul className="list-none  mt-2">
-                        {item.features.map((comp)=>(
-                            <Step title={comp}/>
-                        ))}
-                    </ul>
+              <>
+                <div className=" flex flex-col">
+                  <CardSpotlight key={item.id} className="h-[30rem] w-96 ">
+                  <p className="text-xl font-bold relative z-20 mt-2 text-white">
+                      {item.title}
+                  </p>
+                  <div className="text-neutral-200 mt-4 relative z-20">
+                      {item.description}
+                      <p className=" my-3 text-xl text-neutral-400">{isOn ? item.amountInMonth : item.amountInYear}</p>
+                      <ul className="list-none  mt-2">
+                          {item.features.map((comp)=>(
+                              <Step title={comp}/>
+                          ))}
+                      </ul>
+                  </div>
+                  <div className=" mt-10">
+                    <HoverBorderGradient
+                      containerClassName="rounded-full"
+                      as="button"
+                      className="dark:bg-black bg-black text-primary-100 dark:text-white flex items-center space-x-2"
+                      >
+                      <span>Get Started</span>
+                    </HoverBorderGradient>
+                  </div>
+                  </CardSpotlight>
                 </div>
-                <div className="mt-7">
-                    <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                        Get Started
-                        </span>
-                    </button>
-                </div>
-                </CardSpotlight>
+              </>
             ))}
+
         </div>
+        
     </section>
    </>
   )

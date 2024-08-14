@@ -1,4 +1,5 @@
 
+import CallToAction from "./CallToAction"
 import Demo from "./Demo"
 import Features from "./Features"
 import Hero from "./Hero"
@@ -18,6 +19,7 @@ const Home = () => {
       <Features/>
       <Product/>
       <Pricing/>
+      <CallToAction/>
     </section>
     </>
   )
