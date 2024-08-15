@@ -11,3 +11,9 @@ export interface Pricing {
     description:string;
     features:string[]
 }
+
+export interface FAQListParams {
+    id:number;
+    title:string;
+    detail:string;
+}

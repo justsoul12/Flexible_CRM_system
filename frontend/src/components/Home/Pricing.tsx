@@ -3,6 +3,7 @@ import { pricing } from "@/constants";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { useState } from "react";
 
+
 const Pricing = () => {
 
     const [isOn, setIsOn] = useState(false);
@@ -37,7 +38,7 @@ const Pricing = () => {
                   }`}
                 ></div>
               </label>
-            <span className="ml-3 text-gray-700">{isOn ? 'On' : 'Off'}</span>
+            <span className="ml-3 text-gray-700">{isOn ? 'Monthly' : 'Yearly'}</span>
           </div>
         </div>
         <div className="flex  flex-wrap gap-5 bg-black">
@@ -45,27 +46,27 @@ const Pricing = () => {
               <>
                 <div className=" flex flex-col">
                   <CardSpotlight key={item.id} className="h-[30rem] w-96 ">
-                  <p className="text-xl font-bold relative z-20 mt-2 text-white">
-                      {item.title}
-                  </p>
-                  <div className="text-neutral-200 mt-4 relative z-20">
-                      {item.description}
-                      <p className=" my-3 text-xl text-neutral-400">{isOn ? item.amountInMonth : item.amountInYear}</p>
-                      <ul className="list-none  mt-2">
-                          {item.features.map((comp)=>(
-                              <Step title={comp}/>
-                          ))}
-                      </ul>
-                  </div>
-                  <div className=" mt-10">
-                    <HoverBorderGradient
-                      containerClassName="rounded-full"
-                      as="button"
-                      className="dark:bg-black bg-black text-primary-100 dark:text-white flex items-center space-x-2"
-                      >
-                      <span>Get Started</span>
-                    </HoverBorderGradient>
-                  </div>
+                    <p className="text-xl font-bold relative z-20 mt-2 text-white">
+                        {item.title}
+                    </p>
+                    <div className="text-neutral-200 mt-4 relative z-20">
+                        {item.description}
+                        <p className=" my-3 text-xl text-neutral-400">{isOn ? item.amountInMonth : item.amountInYear}</p>
+                        <ul className="list-none  mt-2">
+                            {item.features.map((comp)=>(
+                                <Step title={comp}/>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className=" mt-10">
+                      <HoverBorderGradient
+                        containerClassName="rounded-full"
+                        as="button"
+                        className="dark:bg-black bg-black text-primary-100 dark:text-white flex items-center space-x-2"
+                        >
+                        <span>Get Started</span>
+                      </HoverBorderGradient>
+                    </div>
                   </CardSpotlight>
                 </div>
               </>

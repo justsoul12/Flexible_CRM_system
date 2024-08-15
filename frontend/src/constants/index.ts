@@ -1,4 +1,4 @@
-import { Pricing, SidebarLink } from "@/types";
+import { FAQListParams, Pricing, SidebarLink } from "@/types";
 
 
 export const SidebarLinks: SidebarLink[] = [
@@ -106,4 +106,38 @@ export const pricing:Pricing[] = [
       '24/7 customer support',
     ]
   },
+]
+
+export const fAQList:FAQListParams[] = [
+  {
+    id:1,
+    title: 'What is Proactic?',
+    detail:`Proactic is a CRM system designed to help businesses manage their customer relationships efficiently. It provides tools for tracking interactions, managing customer data, and analyzing sales performance.`
+  },
+  {
+    id:1,
+    title: 'How does Proactic improve customer relationship management?',
+    detail:`Proactic improves customer relationship management by centralizing all customer interactions in one place. It offers features such as contact management, sales tracking, and automated follow-ups to ensure that no customer interaction is missed.`
+  },
+  {
+    id:1,
+    title: 'Is Proactic suitable for small businesses?',
+    detail:`Yes, Proactic is suitable for businesses of all sizes, including small businesses. Its scalable features and customizable options make it a great fit for businesses looking to improve their customer relationship management without significant upfront investment.`
+  },
+  {
+    id:1,
+    title: 'Can Proactic integrate with other software?',
+    detail:`Yes, Proactic can integrate with various other software applications, such as email platforms, marketing tools, and accounting systems. This allows for seamless data transfer and enhanced functionality.`
+  },
+  {
+    id:1,
+    title: 'What kind of customer support does Proactic offer?',
+    detail:`Proactic offers comprehensive customer support, including 24/7 helpdesk access, live chat, email support, and an extensive knowledge base with tutorials and guides to help users navigate the system.`
+  },
+  {
+    id:1,
+    title: 'How secure is my data with Proactic?',
+    detail:`Proactic takes data security seriously and implements robust security measures to protect your data. This includes encryption, regular security audits, and compliance with industry standards to ensure that your customer information remains safe and secure.`
+  },
+
 ]

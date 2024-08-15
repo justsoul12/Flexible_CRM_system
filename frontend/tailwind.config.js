@@ -1,5 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 /* eslint-env node */
+
+import { flattenColorPalette } from 'tailwindcss/lib/util/flattenColorPalette';
+
+
+
+function addVariablesForColors({ addBase, theme }) {
+  try {
+    const allColors = flattenColorPalette(theme("colors"));
+    if (!allColors) throw new Error("Colors are undefined or not returned properly.");
+  
+    const newVars = Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
+
+    addBase({
+      ':root': newVars,
+    });
+  } catch (error) {
+    console.error("Error in addVariablesForColors:", error);
+  }
+}
+
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -30,6 +53,9 @@ module.exports = {
         secondary: {
           100: '#dcdee0',
           200:'#11d4f2'
+        },
+        border:{
+          100: '#171717'
         },
         dark: {
           100: "#000000",
@@ -144,5 +170,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    addVariablesForColors,
+  ],
 }
+
