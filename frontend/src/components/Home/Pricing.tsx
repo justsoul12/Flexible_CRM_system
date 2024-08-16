@@ -3,7 +3,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { pricing } from "@/constants";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { useState } from "react";
-import Sign_up from "@/auth/sign-up";
+
 
 const Pricing = () => {
 
@@ -39,7 +39,7 @@ const Pricing = () => {
                   }`}
                 ></div>
               </label>
-            <span className="ml-3 text-gray-700">{isOn ? 'On' : 'Off'}</span>
+            <span className="ml-3 text-gray-700">{isOn ? 'Monthly' : 'Yearly'}</span>
           </div>
         </div>
         <div className="flex  flex-wrap gap-5 bg-black">
@@ -65,10 +65,7 @@ const Pricing = () => {
                       as="button"
                       className="dark:bg-black bg-black text-primary-100 dark:text-white flex items-center space-x-2"
                       >
-                      {/* <Link to = '/sign-up'> */}
-                          <span>Get Started</span>
-                      {/* </Link> */}
-                      
+                      <span>Get Started</span>
                     </HoverBorderGradient>
                   </div>
                   </CardSpotlight>
