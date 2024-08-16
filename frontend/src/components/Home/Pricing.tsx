@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { pricing } from "@/constants";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { useState } from "react";
+import Sign_up from "@/auth/sign-up";
 
 const Pricing = () => {
 
@@ -63,7 +65,10 @@ const Pricing = () => {
                       as="button"
                       className="dark:bg-black bg-black text-primary-100 dark:text-white flex items-center space-x-2"
                       >
-                      <span>Get Started</span>
+                      {/* <Link to = '/sign-up'> */}
+                          <span>Get Started</span>
+                      {/* </Link> */}
+                      
                     </HoverBorderGradient>
                   </div>
                   </CardSpotlight>

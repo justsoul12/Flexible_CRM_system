@@ -5,6 +5,8 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { cn } from "@/lib/utils"
 import React from "react"
 import { Link } from "react-router-dom"
+import Sign_up from "@/auth/sign-up"
+
 
 
 const ListItem = React.forwardRef<
